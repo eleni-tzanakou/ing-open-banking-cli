@@ -51,6 +51,7 @@ signature=$(echo -n "$signingString" | openssl dgst -sha256 -sign "$signingKeyPa
 curl -X GET "${httpHost}$reqPath" \
   -H "Accept: application/json" \
   -H "Content-Type: application/json" \
+  -H "X-Request-ID: 00000000-0000-0000-0000-0000000000" \
   -H "Digest: ${digest}" \
   -H "Date: ${reqDate}" \
   -H "Authorization: Bearer ${caccessToken}" \
